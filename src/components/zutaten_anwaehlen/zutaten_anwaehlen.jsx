@@ -2,16 +2,15 @@ import React from "react";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from '@material-ui/core/Checkbox';
 
-
 const zutaten_anwaehlen = (props) => {
 
     return (
         <div>
             <FormControlLabel
                 control={
-                    <Checkbox color="secondary" checked={props.index} onChange={() => props.onChange(props.Ingredients, props.index)}/>
+                    <Checkbox color="secondary" checked={props.index} onChange={() => props.onChange(props.ingredient, props.index)}/>
                 }
-                label={props.Ingredients}
+                label={props.ingredient}
             />
         </div>
     );

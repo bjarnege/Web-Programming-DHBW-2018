@@ -1,0 +1,41 @@
+.FindCocktail {
+    display: block;
+    margin:  0px auto;
+    border: 0px solid #ccc;
+    box-shadow: 0px 3px 3px #ccc;
+    width: 60%;
+    padding: 0px;
+    text-align: center;
+    border-radius: 0px;
+}
+
+.List {
+    display: inline-block;
+    margin:  20px auto;
+    width: 30%;
+    padding: 0px;
+    text-align: left;
+}
+
+.Shopping {
+    top: 0px;
+    display: inline-block;
+    margin:  20px auto;
+    width: 40%;
+    padding: 0px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.ButtonContainer {
+    display: inline-block;
+    margin:  10px auto;
+    width: 1000%;
+    padding: 0px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.Button{
+    color:white;
+}
