@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
+import cocktailsFinden from "./components/cocktailsFinden/cocktails_finden";
+import cocktailsAnzeigen from "./components/cocktailsAnzeigen/cocktails_anzeigen";
+import Rezepte from "./components/Rezepte/rezepte";
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+          <Switch>
+              <Route path="/cocktailsAnzeigen" component={cocktailsAnzeigen}/>
+              <Route path="/Rezepte" component={Rezepte}/>
+              <Route path="/" component={cocktailsFinden}/>
+              <Redirect from="/" to="/"/>
+              <Route render={()=><h1>Diese Seite konnte nicht gefunden werden!</h1>}/>
+          </Switch>
+
+      </BrowserRouter>
   );
 }
 
