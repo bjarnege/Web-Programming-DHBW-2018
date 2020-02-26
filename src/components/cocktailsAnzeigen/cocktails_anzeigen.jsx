@@ -1,22 +1,86 @@
-import React, {Component} from "react"
+import React, {Component} from "react";
+import fetchCocktailAnzeigen from "../fetchCocktailAnzeigen/fetchCocktail_anzeigen";
+import Button from "@material-ui/core/Button";
+import "./cocktail_anzeigen.css"
 
-class Cocktail_list extends Component {
+class cocktails_anzeigen extends Component {
     state = {};
-
     cocktails = {
-        "Cocktail 1": [["Zutat A","Zutat B"],"Text A"],
-        "Cocktail 2": [["Zutat C","Zutat A"],"Text A"],
-
-
+        "Drink1" : [["A", "B", "C"], "Beschreibung1", "bild1.jpeg"],
+        "Drink2" : [["D", "E", "A"], "Beschreibung2", "bild2.jpeg"],
     };
+
+    checkCocktails = () => {
+        let temp = this.state;
+        for (let cocktail in this.cocktails) {
+            if (this.cocktails.hasOwnProperty(cocktail)) {
+                temp = this.state;
+                temp[cocktail] = [];
+                this.setState(temp);
+                this.cocktails[cocktail][0].forEach((item, index) => {
+                    temp = this.state;
+                    if (this.props.location.state.Ingredients[item] === true) {
+                        temp[cocktail].push(item);
+                    }
+                });
+            }
+        }
+        this.setState(temp)
+    };
+
+
+    componentDidMount() {
+        this.checkCocktails();
+    };
+
+    trigger= true;
+
+
+    showWarning = () => {
+        console.log(this.trigger);
+        if (this.trigger){
+            return "Kein Ergebnis gefunden. Bitte erneut suchen."
+        }
+    };
+
 
     render() {
 
         return (
+            <div className="Frame">
+                <h1>Cocktailauswahl</h1>
+                <div >
+                    {
+                        Object.keys(this.cocktails).map(function (key, index) {
+                            if (this.state[key]){
+
+                                if (this.props.location.state.shopping){
+
+                                    if (this.cocktails[key][0].every(val => this.state[key].includes(val))){
+                                        this.trigger = false;
+                                        return <fetchCocktailAnzeigen name={key} cocktails={this.cocktails} state={this.state} key={key}/>
+                                    }
+                                } else {
+                                    this.trigger = false;
+                                    return <fetchCocktailAnzeigen name={key} cocktails={this.cocktails} state={this.state} key={key}/>
+                                }
+
+                            }
 
 
-            <h1>Test</h1>
+                        }, this)
+                    }
+                </div>
+                <p>{this.showWarning()}</p>
+                <div className="BackButtonContainer">
+                    <Button variant="contained" color="primary" onClick={() => this.props.history.goBack()}>
+                        Zurück
+                    </Button>
+                </div>
+
+            </div>
         )
     }
 }
-export default Cocktail_list;
+
+export default cocktails_anzeigen;

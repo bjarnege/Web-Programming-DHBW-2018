@@ -1,0 +1,19 @@
+.CocktailList {
+    display: block;
+    margin:  10px auto;
+    border: 1px solid #ccc;
+    box-shadow: 0px 3px 3px #ccc;
+    width: 60%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.BackButtonContainer {
+    display: inline-block;
+    margin:  20px auto;
+    width: 80%;
+    padding: 0px;
+    text-align: center;
+    vertical-align: top;
+}
