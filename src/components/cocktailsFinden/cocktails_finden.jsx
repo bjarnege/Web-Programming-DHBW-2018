@@ -68,8 +68,15 @@ class cocktails_finden extends Component {
                                                                      />
 
                                                                  <div className="ButtonContainer">
-                                                                 <Button className="Button" variant="contained" color="primary">Cocktails anzeigen</Button>
-
+                                                                   <Link to={{pathname: '/cocktailsAnzeigen',
+                                                                               state: {
+                                                                               Ingredients: this.state.Ingredients,
+                                                                               shopping: this.state.shopping.shopping }
+                                                                              }} >
+                                                                      <Button className="Button" variant="contained" color="primary">
+                                                                      Cocktails anzeigen
+                                                                      </Button>
+                                                                   </Link>
                                                                  </div>
                                                             </div>
                                                         </div>
