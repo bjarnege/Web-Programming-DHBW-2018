@@ -16,26 +16,3 @@
     padding: 0px;
     text-align: left;
 }
-
-.Shopping {
-    top: 0px;
-    display: inline-block;
-    margin:  20px auto;
-    width: 40%;
-    padding: 0px;
-    text-align: left;
-    vertical-align: top;
-}
-
-.ButtonContainer {
-    display: inline-block;
-    margin:  10px auto;
-    width: 1000%;
-    padding: 0px;
-    text-align: left;
-    vertical-align: top;
-}
-
-.Button{
-    color:white;
-}
