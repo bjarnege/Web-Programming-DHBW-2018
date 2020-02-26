@@ -59,6 +59,19 @@ class cocktails_finden extends Component {
                                                                 }, this)
                                                             }
                                                             </div>
+                                                            <div className="Shopping">
+                                                            {/* Checkbox initialieren die ermöglicht auszuwählen, ob man einkaufen gehen möchte.*/}
+                                                                <h3>Möchtest du einkaufen gehen?</h3>
+                                                                    <FormControlLabel
+                                                                    control={<Checkbox color="primary" value="shopping" checked={this.state.shopping.shopping} onChange={this.handleChange}/>}
+                                                                    label="Nur Cocktails aus vorhandene Zutaten anzeigen."
+                                                                     />
+
+                                                                 <div className="ButtonContainer">
+                                                                 <Button className="Button" variant="contained" color="primary">Cocktails anzeigen</Button>
+
+                                                                 </div>
+                                                            </div>
                                                         </div>
                                                     </Content>
                                                 </Layout>
