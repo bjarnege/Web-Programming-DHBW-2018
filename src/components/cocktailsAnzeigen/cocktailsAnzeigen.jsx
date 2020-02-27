@@ -1,13 +1,13 @@
 import React, {Component} from "react";
-import fetchCocktailAnzeigen from "../fetchCocktailAnzeigen/fetchCocktail_anzeigen";
+import FetchCocktailAnzeigen from "../fetchCocktailAnzeigen/fetchCocktailAnzeigen";
 import Button from "@material-ui/core/Button";
 import "./cocktail_anzeigen.css"
 
-class cocktails_anzeigen extends Component {
+class cocktailsAnzeigen extends Component {
     state = {};
     cocktails = {
         "Drink1" : [["A", "B", "C"], "Beschreibung1", "bild1.jpeg"],
-        "Drink2" : [["D", "E", "A"], "Beschreibung2", "bild2.jpeg"],
+        "Drink2" : [["D", "E"], "Beschreibung2", "bild2.jpeg"],
     };
 
     checkCocktails = () => {
@@ -58,11 +58,11 @@ class cocktails_anzeigen extends Component {
 
                                     if (this.cocktails[key][0].every(val => this.state[key].includes(val))){
                                         this.trigger = false;
-                                        return <fetchCocktailAnzeigen name={key} cocktails={this.cocktails} state={this.state} key={key}/>
+                                        return <FetchCocktailAnzeigen name={key} cocktails={this.cocktails} state={this.state} key={key}/>
                                     }
                                 } else {
                                     this.trigger = false;
-                                    return <fetchCocktailAnzeigen name={key} cocktails={this.cocktails} state={this.state} key={key}/>
+                                    return <FetchCocktailAnzeigen name={key} cocktails={this.cocktails} state={this.state} key={key}/>
                                 }
 
                             }
@@ -80,7 +80,7 @@ class cocktails_anzeigen extends Component {
 
             </div>
         )
-    }
-}
+    };
+};
 
-export default cocktails_anzeigen;
+export default cocktailsAnzeigen;

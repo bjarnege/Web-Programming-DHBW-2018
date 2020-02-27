@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
-import cocktailsFinden from "./components/cocktailsFinden/cocktailFinden";
-import cocktailsAnzeigen from "./components/cocktailsAnzeigen/cocktails_anzeigen";
+import CocktailsFinden from "./components/cocktailsFinden/cocktailFinden";
+import CocktailsAnzeigen from "./components/cocktailsAnzeigen/cocktailsAnzeigen";
 import Rezepte from "./components/Rezepte/rezepte";
 import './App.css';
 
@@ -10,9 +10,9 @@ function App() {
       <BrowserRouter>
           {/* Routing initialisiert */}
           <Switch>
-              <Route path="/cocktailsAnzeigen" component={cocktailsAnzeigen}/>
+              <Route path="/cocktailsAnzeigen" component={CocktailsAnzeigen}/>
               <Route path="/Rezepte" component={Rezepte}/>
-              <Route path="/" component={cocktailsFinden}/>
+              <Route path="/" component={CocktailsFinden}/>
               <Redirect from="/" to="/"/>
               <Route render={()=><h1>Diese Seite konnte nicht gefunden werden!</h1>}/>
           </Switch>

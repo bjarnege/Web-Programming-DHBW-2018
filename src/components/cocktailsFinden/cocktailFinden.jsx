@@ -5,13 +5,13 @@ import ZutatenAnwaehlen from "../zutaten_anwaehlen/zutaten_anwaehlen";
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Button from "@material-ui/core/Button";
-import "./cocktailFinden.css"
+import "./cocktail_finden.css"
 
 class cocktails_finden extends Component {
     state = {
         Ingredients: {
             "A": false,
-            "B ": false,
+            "B": false,
             "C": false,
             "D": false,
             "E": false,
