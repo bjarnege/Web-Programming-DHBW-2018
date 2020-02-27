@@ -24,7 +24,7 @@ const fetchCocktailAnzeigen = (props) => {
                 }
             }}
             >
-                <div  className="CocktailListElement">
+                <div className="CocktailListElement">
 
                     <div className="CocktailListElementDescription">
                         <div>
@@ -36,7 +36,7 @@ const fetchCocktailAnzeigen = (props) => {
                         <div className="CocktailImage">
                             <img className="img" src={require(`../../Images/${props.cocktails[props.name][2]}`)}/>
                         </div>
-                        <div  className="ShowMoreButton">
+                        <div className="ShowMoreButton">
                             <Button className="" variant="contained" color="primary">
                                 Rezept ansehen
                             </Button>
@@ -44,18 +44,9 @@ const fetchCocktailAnzeigen = (props) => {
                         <hr color="black" width="100%"/>
 
                     </div>
-
-
-
-
                 </div>
-
-
-
             </Link>
         </div>
-
-
     );
 };
 
