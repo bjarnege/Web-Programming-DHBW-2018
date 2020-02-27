@@ -15,7 +15,6 @@
     width: 30%;
     padding: 0px;
     text-align: left;
-
 }
 
 .Shopping {
@@ -31,8 +30,12 @@
 .ButtonContainer {
     display: inline-block;
     margin:  10px auto;
+    width: 1000%;
     padding: 0px;
     text-align: left;
     vertical-align: top;
+}
 
+.Button{
+    color:white;
 }
