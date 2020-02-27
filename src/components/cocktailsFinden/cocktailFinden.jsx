@@ -17,7 +17,7 @@ class cocktails_finden extends Component {
             "E": false,
         },
         shopping: {
-            "shopping" : false
+            "shopping": false
         }
     };
 
@@ -31,19 +31,27 @@ class cocktails_finden extends Component {
     handleChange = () => {
         let temp = this.state;
         temp.shopping["shopping"] = !temp.shopping["shopping"];
-        this.setState( temp)
+        this.setState(temp)
     };
 
     render() {
         return (
             <div className="layout">
                 <Layout>
-                    <Header title="Auswahlmenü" scroll>
+                    <Header align="center" title="Auswahlmenü" scroll>
                     </Header>
                     <Drawer title="Auswahlmenü">
                         <Navigation>
-                            <a>Zutaten angeben</a>
-                            <a>Rezeptbuch ansehen</a>
+                            <a href="/">Zutaten angeben</a>
+                            <Link style={{color: '#d'}} to={{
+                                pathname: '/CocktailsAnzeigen',
+                                state: {
+                                    Ingredients: false,
+                                    shopping: false
+                                }
+                            }}
+                            >Rezeptbuch ansehen
+                            </Link>
                         </Navigation>
                     </Drawer>
                     <Content>
@@ -53,7 +61,8 @@ class cocktails_finden extends Component {
                                 <h3>Zutaten auswählen</h3>
                                 {
                                     Object.keys(this.state.Ingredients).map(function (key, index) {
-                                        return <ZutatenAnwaehlen ingredient={key} onChange={this.changeChecked} checked={index} key={key}/>
+                                        return <ZutatenAnwaehlen ingredient={key} onChange={this.changeChecked}
+                                                                 checked={index} key={key}/>
                                     }, this)
                                 }
                             </div>
@@ -61,16 +70,20 @@ class cocktails_finden extends Component {
                                 {/* Checkbox initialieren die ermöglicht auszuwählen, ob man einkaufen gehen möchte.*/}
                                 <h3>Möchtest du einkaufen gehen?</h3>
                                 <FormControlLabel
-                                    control={<Checkbox color="primary" value="shopping" checked={this.state.shopping.shopping} onChange={this.handleChange}/>}
+                                    control={<Checkbox color="primary" value="shopping"
+                                                       checked={this.state.shopping.shopping}
+                                                       onChange={this.handleChange}/>}
                                     label="Nur Cocktails aus vorhandene Zutaten anzeigen."
                                 />
 
                                 <div className="ButtonContainer">
-                                    <Link to={{pathname: '/cocktailsAnzeigen',
+                                    <Link to={{
+                                        pathname: '/cocktailsAnzeigen',
                                         state: {
                                             Ingredients: this.state.Ingredients,
-                                            shopping: this.state.shopping.shopping }
-                                    }} >
+                                            shopping: this.state.shopping.shopping
+                                        }
+                                    }}>
                                         <Button className="Button" variant="contained" color="primary">
                                             Cocktails anzeigen
                                         </Button>
