@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3f98e056-842b-46bf-94d3-6fadfca49c6b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Rezepte/Rezept.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Rezepte/Rezept.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cocktailsAnzeigen/cocktailsAnzeigen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cocktailsAnzeigen/cocktailsAnzeigen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cocktailsFinden/cocktailFinden.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cocktailsFinden/cocktailFinden.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/fetchCocktailAnzeigen/fetchCocktailAnzeigen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/fetchCocktailAnzeigen/fetchCocktailAnzeigen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/fetchCocktailAnzeigen/fetchCocktail_anzeigen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/fetchCocktailAnzeigen/fetchCocktail_anzeigen.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,12 +76,22 @@
       <workItem from="1582758333556" duration="2190000" />
       <workItem from="1582787483953" duration="2051000" />
       <workItem from="1582805493528" duration="4548000" />
-      <workItem from="1582825896480" duration="956000" />
+      <workItem from="1582825896480" duration="2113000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -100,6 +109,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="512" y="247" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1582756948970" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1582827717851">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1582827717851" />
     <state x="548" y="154" key="FileChooserDialogImpl" timestamp="1582754281918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -132,16 +145,5 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1582810067959" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/Rezepte/Rezept.jsx</url>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
