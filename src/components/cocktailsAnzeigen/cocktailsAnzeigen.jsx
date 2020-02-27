@@ -8,7 +8,7 @@ class cocktailsAnzeigen extends Component {
     cocktails = {
         "Drink1" : [["A", "B", "C"], "Beschreibung1", "bild1.jpeg"],
         "Drink2" : [["D", "E"], "Beschreibung2", "bild2.jpeg"],
-    };
+                };
 
     checkCocktails = () => {
         let temp = this.state;
@@ -80,7 +80,7 @@ class cocktailsAnzeigen extends Component {
 
             </div>
         )
-    };
+    }
 };
 
 export default cocktailsAnzeigen;

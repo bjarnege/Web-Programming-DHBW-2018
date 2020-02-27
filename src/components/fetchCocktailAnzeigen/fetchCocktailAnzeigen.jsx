@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"
 
 const fetchCocktailAnzeigen = (props) => {
     const calculatePercentage = (props) => {
@@ -8,9 +9,16 @@ const fetchCocktailAnzeigen = (props) => {
         }
     };
 
-    return (
-
-        <div className="CocktailListElementWrapper">
+    return (<div className="CocktailListElementWrapper">
+            <Link to={{
+                pathname: '/Rezept',
+                state: {
+                    name: props.name,
+                    cocktails: props.cocktails,
+                    state: props.state
+                }
+            }}
+            >
                 <div className="CocktailListElement">
                     <div className="CocktailListElementDescription">
                         <h2>{props.name}</h2>
@@ -21,9 +29,8 @@ const fetchCocktailAnzeigen = (props) => {
                     </div>
 
                 </div>
+            </Link>
         </div>
-
-
     );
 };
 
