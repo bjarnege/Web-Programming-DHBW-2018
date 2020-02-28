@@ -9,12 +9,20 @@ import "./cocktail_finden.css"
 
 class cocktails_finden extends Component {
     state = {
-        Ingredients: {
-            "A": false,
-            "B": false,
-            "C": false,
-            "D": false,
-            "E": false,
+        Ingredients:{
+            "Tequila": false,
+            "Orangensaft": false,
+            "Grenadine": false,
+            "weißer Rum": false,
+            "Cola": false,
+            "Limettensaft": false,
+            "Cointreau": false,
+            "Zuckersirup": false,
+            "Vodka": false,
+            "Cranberrysaft": false,
+            "Gin": false,
+            "Tonic": false,
+            "Basilikum": false
         },
         shopping: {
             "shopping": false

@@ -8,8 +8,12 @@ import {Content, Drawer, Header, Layout, Navigation} from "react-mdl";
 class cocktailsAnzeigen extends Component {
     state = {};
     cocktails = {
-        "Drink1": [["A", "B", "C"], "Beschreibung1", "bild1.jpeg"],
-        "Drink2": [["D", "E"], "Beschreibung2", "bild2.jpeg"],
+        "Tequila Sunrise": [["Tequila", "Orangensaft", "Grenadine"], "Den Tequila, Orangen- und Zitronensaft zusammen mit ein paar Eiswürfeln shaken. Eiswürfel in ein Glas geben und den Cocktail durch ein Barsieb eingießen. Die Grenadine an einem Löffel in den Cocktail fließen lassen.\n Zum Abschluss nach Belieben garnieren (z.B. mit einer Orangenscheibe).", "tequila.jpeg"],
+        "Cuba Libre": [["weißer Rum", "Cola", "Limettensaft"], "Die Limette in Achteln über dem Glas ausdrücken und hinein geben. Dann Eiswürfel oder Crushed Ice dazugeben und mit Rum, Cola und Limettensaft auffüllen.", "cubalibre.jpeg"],
+        "Margarita": [["Tequila", "Cointreau", "Limettensaft", "Zuckersirup"], "Für den Salzrand das Margaritaglas zuerst in Limettensaft und dann vorsichtig in Salz eintauchen. Die Zutaten einfach zusammen mit Eis shaken und in das vorbereitete Glas geben. Klassisch mit einer Limettenscheibe garnieren.", "margarita.jpeg"],
+        "Cosmopolitan": [["Vodka", "Cranberrysaft", "Limettensaft", "Cointreau"], "Den Wodka, Cranberrysaft, Limettensaft, Eiswürfel und den Cointreau/Triple in den Cocktailshaker geben. Den Cocktailshaker verschließen und einige Sekunden gut schütteln. Den Cosmopoliton durch ein Sieb in vier Cocktailschalen oder Gläser gießen und mit einem Stück Limette garnieren.", "cosmopolitan.jpeg"],
+        "Lime & Basil Gin Tonic": [["Gin", "Tonic", "Basilikum", "Limettensaft"], "Gläser mit Eis füllen und 1 Stunde ins Gefrierfach stellen. Limettenzesten, 2 Zweige Basilikum, Gin und Lillet in den Shaker geben. Mit einem Stößel leicht anmuddeln. Shaker bis zur Kante mit Eis füllen und 15 Sekunden kräftig schütteln. Durch ein Sieb in die geeisten Gläser füllen. Mit Tonic Water aufgießen. Limettenzesten drehen, um die ätherischen Öle freizusetzen, und mit dem restlichen Basilikum in die Gläser stecken.", "gintonic.jpeg"],
+
     };
 
     checkCocktails = () => {
