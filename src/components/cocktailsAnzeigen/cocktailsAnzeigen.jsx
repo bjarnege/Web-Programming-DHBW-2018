@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 import {Content, Drawer, Header, Layout, Navigation} from "react-mdl";
 
 class cocktailsAnzeigen extends Component {
+    check_pct = this.props.location.state.show_pct;
     state = {};
     cocktails = {
         "Tequila Sunrise": [["Tequila", "Orangensaft", "Grenadine"], "Den Tequila, Orangen- und Zitronensaft zusammen mit ein paar Eiswürfeln shaken. Eiswürfel in ein Glas geben und den Cocktail durch ein Barsieb eingießen. Die Grenadine an einem Löffel in den Cocktail fließen lassen.\n Zum Abschluss nach Belieben garnieren (z.B. mit einer Orangenscheibe).", "tequila.jpeg"],
@@ -16,7 +17,7 @@ class cocktailsAnzeigen extends Component {
 
     };
 
-    checkCocktails = () => {
+    checkStock = () => {
         let temp = this.state;
         for (let cocktail in this.cocktails) {
             if (this.cocktails.hasOwnProperty(cocktail)) {
@@ -36,22 +37,20 @@ class cocktailsAnzeigen extends Component {
 
 
     componentDidMount() {
-        this.checkCocktails();
+        this.checkStock();
     };
 
     trigger = true;
 
 
-    showWarning = () => {
-        console.log(this.trigger);
+    warnungAnzeigen = () => {
         if (this.trigger) {
             return "Kein Ergebnis gefunden. Bitte erneut suchen."
         }
     };
 
-
     render() {
-
+        console.log(this);
         return (
             <div className="layout">
                 <Layout>
@@ -64,7 +63,7 @@ class cocktailsAnzeigen extends Component {
                                 pathname: '/CocktailsAnzeigen',
                                 state: {
                                     Ingredients: false,
-                                    shopping: false
+                                    shopping: false,
                                 }
                             }}
                             >Rezeptbuch ansehen
@@ -83,12 +82,12 @@ class cocktailsAnzeigen extends Component {
 
                                                 if (this.cocktails[key][0].every(val => this.state[key].includes(val))) {
                                                     this.trigger = false;
-                                                    return <FetchCocktailAnzeigen name={key} cocktails={this.cocktails}
+                                                    return <FetchCocktailAnzeigen show_pct={this.check_pct} name={key} cocktails={this.cocktails}
                                                                                   state={this.state} key={key}/>
                                                 }
                                             } else {
                                                 this.trigger = false;
-                                                return <FetchCocktailAnzeigen name={key} cocktails={this.cocktails}
+                                                return <FetchCocktailAnzeigen show_pct={this.check_pct}  name={key} cocktails={this.cocktails}
                                                                               state={this.state} key={key}/>
                                             }
 
@@ -98,7 +97,7 @@ class cocktailsAnzeigen extends Component {
                                     }, this)
                                 }
                             </div>
-                            <p>{this.showWarning()}</p>
+                            <p>{this.warnungAnzeigen()}</p>
                             <div className="BackButtonContainer">
                                 <Button variant="contained" color="primary" onClick={() => this.props.history.goBack()}>
                                     Zurück

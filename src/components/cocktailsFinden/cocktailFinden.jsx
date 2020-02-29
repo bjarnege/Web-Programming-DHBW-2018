@@ -89,7 +89,8 @@ class cocktails_finden extends Component {
                                         pathname: '/cocktailsAnzeigen',
                                         state: {
                                             Ingredients: this.state.Ingredients,
-                                            shopping: this.state.shopping.shopping
+                                            shopping: this.state.shopping.shopping,
+                                            show_pct: true,
                                         }
                                     }}>
                                         <Button className="Button" variant="contained" color="primary">

@@ -23,7 +23,7 @@ class Rezept extends Component {
     render() {
 
         const props = this.props.location.state;
-        const gesamt = props.cocktails[props.name][0];
+        const cocktails_alle = props.cocktails[props.name][0];
         const einkaufen = props.cocktails[props.name][0].filter(x => !props.state[props.name].includes(x));
 
         return (
@@ -38,7 +38,7 @@ class Rezept extends Component {
                                 pathname: '/cocktailsAnzeigen',
                                 state: {
                                     Ingredients: false,
-                                    shopping: false
+                                    shopping: false,
                                 }
                             }}
                             >Rezeptbuch ansehen
@@ -52,8 +52,8 @@ class Rezept extends Component {
                                 <div>
                                     <h3>Benötigte Zutaten</h3>
                                     {
-                                        Object.keys(gesamt).map(function (key, index) {
-                                            return <li key={key}>{gesamt[key]}</li>
+                                        Object.keys(cocktails_alle).map(function (key, index) {
+                                            return <li key={key}>{cocktails_alle[key]}</li>
                                         }, this)
                                     }
 

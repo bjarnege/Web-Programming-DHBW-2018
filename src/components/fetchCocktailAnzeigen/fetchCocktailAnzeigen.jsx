@@ -3,12 +3,17 @@ import {Link} from "react-router-dom"
 import "./fetchCocktail_Anzeigen.css"
 import Button from "@material-ui/core/Button"
 
+
 const fetchCocktailAnzeigen = (props) => {
-    const calculatePercentage = (props) => {
-        if (props.state[props.name]) {
-            let percentage = (props.state[props.name].length / props.cocktails[props.name][0].length) * 100;
-            return percentage.toFixed(2)
-        }
+    let show_pct = props.show_pct
+
+    const matchBestimmen = (props) => {
+        if (show_pct) {
+            if (props.state[props.name]) {
+                let percentage = (props.state[props.name].length / props.cocktails[props.name][0].length) * 100;
+                return <h4 align="left">{percentage.toFixed(2)}% der Zutaten verfügbar.</h4>
+
+        }}
     };
 
     return (
@@ -20,18 +25,16 @@ const fetchCocktailAnzeigen = (props) => {
                     name: props.name,
                     cocktails: props.cocktails,
                     state: props.state,
-                    ingredients: props.cocktails.ingredients
+                    ingredients: props.cocktails.ingredients,
                 }
             }}
             >
                 <div className="CocktailListElement">
 
                     <div className="CocktailListElementDescription">
+                        <h2 align="left">{props.name}</h2>
                         <div>
-                            <h2 align="left">{props.name}</h2>
-                            <h4 align="left">{calculatePercentage(props)}% der Zutaten verfügbar.</h4>
-
-
+                            <h4 align="left">{matchBestimmen(props)}</h4>
                         </div>
                         <div className="CocktailImage">
                             <img className="img" src={require(`../../Images/${props.cocktails[props.name][2]}`)}/>
