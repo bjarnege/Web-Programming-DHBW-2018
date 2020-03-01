@@ -6,8 +6,11 @@ import {Link} from 'react-router-dom';
 import {Content, Drawer, Header, Layout, Navigation} from "react-mdl";
 
 class cocktailsAnzeigen extends Component {
+    //Initialisieren der Variablen
     check_pct = this.props.location.state.show_pct;
     state = {};
+
+    // Hier werden die Cocktails hinzugefüht.
     cocktails = {
         "Tequila Sunrise": [["Tequila", "Orangensaft", "Grenadine"], "Den Tequila, Orangen- und Zitronensaft zusammen mit ein paar Eiswürfeln shaken. Eiswürfel in ein Glas geben und den Cocktail durch ein Barsieb eingießen. Die Grenadine an einem Löffel in den Cocktail fließen lassen.\n Zum Abschluss nach Belieben garnieren (z.B. mit einer Orangenscheibe).", "tequila.jpeg"],
         "Cuba Libre": [["weißer Rum", "Cola", "Limettensaft"], "Die Limette in Achteln über dem Glas ausdrücken und hinein geben. Dann Eiswürfel oder Crushed Ice dazugeben und mit Rum, Cola und Limettensaft auffüllen.", "cubalibre.jpeg"],
@@ -17,7 +20,8 @@ class cocktailsAnzeigen extends Component {
 
     };
 
-    checkStock = () => {
+    // Überprüfen, welche Zutaten benötigt werden bzw. vorhanden sind.
+    cocktailsChecken = () => {
         let temp = this.state;
         for (let cocktail in this.cocktails) {
             if (this.cocktails.hasOwnProperty(cocktail)) {
@@ -36,21 +40,25 @@ class cocktailsAnzeigen extends Component {
     };
 
 
+    // Triggern der obigen Überprüfung
     componentDidMount() {
-        this.checkStock();
+        this.cocktailsChecken();
     };
 
+    /* Initialsieren der trigger-Variable
+    Diese Variable wird auf false gesetzt, wenn aus den vorhandenen Zutaten ein Cocktail erstellt werden kann.*/
     trigger = true;
 
 
+    // Sofern keine Cocktails verfügbar sind, gib eine Warnung aus
     warnungAnzeigen = () => {
         if (this.trigger) {
             return "Kein Ergebnis gefunden. Bitte erneut suchen."
         }
     };
 
+    // Rendern des HTML-Codes
     render() {
-        console.log(this);
         return (
             <div className="layout">
                 <Layout>
@@ -74,7 +82,7 @@ class cocktailsAnzeigen extends Component {
                         <div className="Frame">
                             <h1>Cocktailauswahl</h1>
                             <div>
-                                {
+                                {/*Übergeben des states an die Komponente FetchCocktailAnzeigen und rendern der Ausgabe dieser*/
                                     Object.keys(this.cocktails).map(function (key, index) {
                                         if (this.state[key]) {
 
@@ -82,12 +90,14 @@ class cocktailsAnzeigen extends Component {
 
                                                 if (this.cocktails[key][0].every(val => this.state[key].includes(val))) {
                                                     this.trigger = false;
-                                                    return <FetchCocktailAnzeigen show_pct={this.check_pct} name={key} cocktails={this.cocktails}
+                                                    return <FetchCocktailAnzeigen show_pct={this.check_pct} name={key}
+                                                                                  cocktails={this.cocktails}
                                                                                   state={this.state} key={key}/>
                                                 }
                                             } else {
                                                 this.trigger = false;
-                                                return <FetchCocktailAnzeigen show_pct={this.check_pct}  name={key} cocktails={this.cocktails}
+                                                return <FetchCocktailAnzeigen show_pct={this.check_pct} name={key}
+                                                                              cocktails={this.cocktails}
                                                                               state={this.state} key={key}/>
                                             }
 
@@ -97,6 +107,7 @@ class cocktailsAnzeigen extends Component {
                                     }, this)
                                 }
                             </div>
+                            {/* Verwendung der definierten Funktion warnungAnzeigen*/}
                             <p>{this.warnungAnzeigen()}</p>
                             <div className="BackButtonContainer">
                                 <Button variant="contained" color="primary" onClick={() => this.props.history.goBack()}>

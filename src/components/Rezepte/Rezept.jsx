@@ -3,25 +3,24 @@ import "./Rezept.css"
 import {Link} from "react-router-dom";
 import {Content, Drawer, Header, Layout, Navigation} from "react-mdl";
 
+/* Dies ist die Rezeptseite, hier werd der Cocktail verarbeitet und dem Anwender gezeigte was er noch benötigt bzw. wie der Cocktail zuzubereiten ist.*/
+
 class Rezept extends Component {
 
-    missing = (einkaufen) => {
+    // Überprüfen ob und welche Zutaten fehlen
+    fehlend = (einkaufen) => {
         if (einkaufen.length > 0) {
             return (
                 <div>
-
-                    {
-                        Object.keys(einkaufen).map(function (key, index) {
+                    {Object.keys(einkaufen).map(function (key, index) {
                             return <li key={key}>{einkaufen[index]}</li>
-                        }, this)
-                    }
-                </div>
-            )
+                        }, this)}
+                </div>)
         }
     };
 
     render() {
-
+        // Initialisieren der benötigten Variablen
         const props = this.props.location.state;
         const cocktails_alle = props.cocktails[props.name][0];
         const einkaufen = props.cocktails[props.name][0].filter(x => !props.state[props.name].includes(x));
@@ -50,6 +49,7 @@ class Rezept extends Component {
                             <h1>{props.name}</h1>
                             <div className="textField">
                                 <div>
+                                    {/* Rendern die benötigten Zutaten*/}
                                     <h3>Benötigte Zutaten</h3>
                                     {
                                         Object.keys(cocktails_alle).map(function (key, index) {
@@ -59,10 +59,12 @@ class Rezept extends Component {
 
                                 </div>
                                 <div>
+                                    {/* Rendern die fehleden Zutaten mittels der "fehlend"-Funktion*/}
                                     <h3>Fehlende Zutaten</h3>
-                                    {this.missing(einkaufen)}
+                                    {this.fehlend(einkaufen)}
                                 </div>
                                 <div>
+                                    {/* Render der Zubereitungsschritte */}
                                     <h4>Zubereitung</h4>
                                     <p>{props.cocktails[props.name][1]}</p>
                                 </div>

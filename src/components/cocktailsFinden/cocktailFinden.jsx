@@ -8,6 +8,8 @@ import Button from "@material-ui/core/Button";
 import "./cocktail_finden.css"
 
 class cocktails_finden extends Component {
+    /* Initialisieren der state-Variable
+    diese beeinhaltet die vorhanden Zutaten, die shopping-Variable, die dazu dient zu erfassen, ob der Anwender einkaufen möchte*/
     state = {
         Ingredients:{
             "Tequila": false,
@@ -42,10 +44,13 @@ class cocktails_finden extends Component {
         this.setState(temp)
     };
 
+    //Renders des HTML-Codes
     render() {
         return (
             <div className="layout">
                 <Layout>
+                    {/*Hier wird der Navigationsbar implementiert dieser findet sich auch in den anderen beiden Komponenten wieder.
+                    Dort wird er nicht erneut erläutert*/}
                     <Header align="center" title="Auswahlmenü" scroll>
                     </Header>
                     <Drawer title="Auswahlmenü">
@@ -67,7 +72,8 @@ class cocktails_finden extends Component {
                             <h1>Cocktailsuche</h1>
                             <div className="List">
                                 <h3>Zutaten auswählen</h3>
-                                {
+                                {/*Übergeben des states an die Komponente ZutatenAnwaehlen
+                                hierdurch wird die Auswahl des Kunden verarbeitet*/
                                     Object.keys(this.state.Ingredients).map(function (key, index) {
                                         return <ZutatenAnwaehlen ingredient={key} onChange={this.changeChecked}
                                                                  checked={index} key={key}/>
@@ -85,6 +91,10 @@ class cocktails_finden extends Component {
                                 />
 
                                 <div className="ButtonContainer">
+                                    {/* Verlinkung auf die Komponete cocktailsAnzeigen
+                                    Zusätzlich wird der aktuelle state übergeben,
+                                     damit diese auf der folgenden Seite verwendet werden können,
+                                     um die Zutatenüberprüfung durchzuführen*/}
                                     <Link to={{
                                         pathname: '/cocktailsAnzeigen',
                                         state: {

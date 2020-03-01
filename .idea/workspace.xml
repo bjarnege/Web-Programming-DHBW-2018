@@ -7,6 +7,7 @@
       <change beforePath="$PROJECT_DIR$/src/components/cocktailsAnzeigen/cocktailsAnzeigen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cocktailsAnzeigen/cocktailsAnzeigen.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cocktailsFinden/cocktailFinden.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cocktailsFinden/cocktailFinden.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/fetchCocktailAnzeigen/fetchCocktailAnzeigen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/fetchCocktailAnzeigen/fetchCocktailAnzeigen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/zutaten_anwaehlen/zutaten_anwaehlen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/zutaten_anwaehlen/zutaten_anwaehlen.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +83,10 @@
       <workItem from="1582805493528" duration="4548000" />
       <workItem from="1582825896480" duration="5746000" />
       <workItem from="1582926423011" duration="3628000" />
-      <workItem from="1582989850723" duration="7356000" />
+      <workItem from="1582989850723" duration="8383000" />
+      <workItem from="1583004398573" duration="1254000" />
+      <workItem from="1583014591818" duration="14000" />
+      <workItem from="1583071159236" duration="2632000" />
     </task>
     <servers />
   </component>
@@ -127,22 +131,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582754281918" />
-    <state width="812" height="243" key="GridCell.Tab.0.bottom" timestamp="1582997653773">
+    <state width="1515" height="243" key="GridCell.Tab.0.bottom" timestamp="1583073768113">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="812" height="243" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582997653773" />
-    <state width="812" height="243" key="GridCell.Tab.0.center" timestamp="1582997653773">
+    <state width="1515" height="243" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583073768113" />
+    <state width="1515" height="243" key="GridCell.Tab.0.center" timestamp="1583073768113">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="812" height="243" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582997653773" />
-    <state width="812" height="243" key="GridCell.Tab.0.left" timestamp="1582997653773">
+    <state width="1515" height="243" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583073768113" />
+    <state width="1515" height="243" key="GridCell.Tab.0.left" timestamp="1583073768112">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="812" height="243" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582997653773" />
-    <state width="812" height="243" key="GridCell.Tab.0.right" timestamp="1582997653773">
+    <state width="1515" height="243" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583073768112" />
+    <state width="1515" height="243" key="GridCell.Tab.0.right" timestamp="1583073768113">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="812" height="243" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582997653773" />
+    <state width="1515" height="243" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583073768113" />
     <state x="349" y="147" key="IDE.errors.dialog" timestamp="1582737823937">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -151,13 +155,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="611" y="38" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1583000774139" />
+    <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583072584010">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1583072584010" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1582810067959">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1582810067959" />
-    <state x="486" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1583002045507">
+    <state x="486" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1583073198445">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="486" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1583002045507" />
+    <state x="486" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1583073198445" />
   </component>
 </project>
